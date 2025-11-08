@@ -157,8 +157,8 @@ $user_role = $_SESSION['role'] ?? '';
 
     <main class="container">
         <div class="about-header">
-            <h1>Sobre Nosotros</h1>
-            <p>Somos un equipo apasionado por compartir conocimiento y crear contenido valioso para nuestra comunidad.</p>
+            <h1>Sobre Este Proyecto</h1>
+            <p>Este sistema de blog fue desarrollado por Miguel García utilizando PHP como un proyecto para practicar y mejorar sus conocimientos en desarrollo web.</p>
         </div>
 
         <div class="about-content">
@@ -168,51 +168,41 @@ $user_role = $_SESSION['role'] ?? '';
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                               d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
                     </svg>
-                    Nuestra Misión
+                    Objetivo del Proyecto
                 </h2>
-                <p>Buscamos inspirar y educar a través de contenido de calidad, compartiendo conocimientos y experiencias que ayuden a otros a crecer.</p>
+                <p>Este blog fue creado como un proyecto de práctica para aplicar conocimientos de desarrollo web con PHP, HTML, CSS y JavaScript, implementando funcionalidades completas de un sistema de gestión de contenido.</p>
             </div>
 
             <div class="about-card">
                 <h2>
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
                     </svg>
-                    Nuestros Valores
+                    Tecnologías Utilizadas
                 </h2>
-                <p>Nos guiamos por la transparencia, la autenticidad y el compromiso con la excelencia en todo lo que hacemos.</p>
+                <p>Desarrollado con PHP para el backend, MySQL para la base de datos, HTML5 y CSS3 para el frontend, con JavaScript para las interacciones dinámicas. El diseño es completamente responsivo y moderno.</p>
             </div>
 
             <div class="about-card">
                 <h2>
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                              d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                              d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                     </svg>
-                    Nuestro Alcance
+                    Aprendizaje Continuo
                 </h2>
-                <p>Llegamos a lectores de todo el mundo, creando una comunidad global de personas interesadas en aprender y crecer juntos.</p>
+                <p>Este proyecto representa el esfuerzo continuo de Miguel García por mejorar sus habilidades en programación web, implementando buenas prácticas de desarrollo y patrones de diseño modernos.</p>
             </div>
         </div>
 
         <div class="team-section">
-            <h2>Nuestro Equipo</h2>
+            <h2>Desarrollador</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://via.placeholder.com/120" alt="Miguel">
-                    <h3>Miguel</h3>
-                    <p>Fundador & Editor Principal</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/120" alt="Ana">
-                    <h3>Ana</h3>
-                    <p>Editora de Contenido</p>
-                </div>
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/120" alt="Carlos">
-                    <h3>Carlos</h3>
-                    <p>Desarrollador Web</p>
+                    <img src="https://via.placeholder.com/120" alt="Miguel García">
+                    <h3>Miguel García</h3>
+                    <p>Desarrollador Full Stack<br>Creador del proyecto</p>
                 </div>
             </div>
         </div>

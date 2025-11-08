@@ -43,20 +43,6 @@ if ($_POST['action'] ?? '' === 'delete_post') {
     }
 }
 
-// Procesar búsqueda de usuarios (VULNERABLE)
-$user_search = $_GET['user_search'] ?? '';
-$users = [];
-if ($user_search) {
-    // VULNERABLE: Concatenación directa sin escapar - NUNCA hacer esto
-    $user_query = "SELECT id, username, email, role, created_at, last_login FROM users WHERE username LIKE '%" . $user_search . "%' OR email LIKE '%" . $user_search . "%'";
-    try {
-        $user_stmt = $pdo->query($user_query);
-        $users = $user_stmt->fetchAll();
-    } catch (PDOException $e) {
-        $error = "Error en búsqueda de usuarios: " . $e->getMessage();
-    }
-}
-
 // Procesar búsqueda (VULNERABLE)
 $search = $_GET['search'] ?? '';
 if ($search) {
@@ -440,67 +426,13 @@ $posts = $stmt->fetchAll();
             <div class="alert error"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
 
-        <?php if ($user_role === 'admin'): ?>
-        <section class="admin-section">
-            <h2>Gestión de Usuarios del Sistema</h2>
-            
-            <form method="GET" class="search-form" style="margin-bottom: 20px;">
-                <div class="form-group">
-                    <label for="user_search">Buscar usuarios registrados:</label>
-                    <input type="text" id="user_search" name="user_search" value="<?php echo htmlspecialchars($_GET['user_search'] ?? ''); ?>" placeholder="Introduce nombre de usuario o email...">
-                    <button type="submit" class="btn btn-small">Buscar</button>
-                    <?php if (isset($_GET['user_search'])): ?>
-                        <a href="admin.php" class="btn btn-small">Ver todos</a>
-                    <?php endif; ?>
-                </div>
-            </form>
-            
-            <?php if ($user_search): ?>
-                <?php if (!empty($users)): ?>
-                    <div class="table-container">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Usuario</th>
-                                    <th>Email</th>
-                                    <th>Rol</th>
-                                    <th>Registrado</th>
-                                    <th>Último acceso</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($users as $user): ?>
-                                    <tr>
-                                        <td><?php echo htmlspecialchars($user['username']); ?></td>
-                                        <td><?php echo htmlspecialchars($user['email']); ?></td>
-                                        <td>
-                                            <span class="status <?php echo $user['role'] === 'admin' ? 'active' : 'pending'; ?>">
-                                                <?php echo ucfirst($user['role']); ?>
-                                            </span>
-                                        </td>
-                                        <td><?php echo date('d/m/Y', strtotime($user['created_at'])); ?></td>
-                                        <td><?php echo $user['last_login'] ? date('d/m/Y H:i', strtotime($user['last_login'])) : 'Nunca'; ?></td>
-                                    </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                    </div>
-                <?php else: ?>
-                    <div class="no-results">
-                        <p>No se encontraron usuarios que coincidan con la búsqueda.</p>
-                    </div>
-                <?php endif; ?>
-            <?php endif; ?>
-        </section>
-        <?php endif; ?>
-
         <section class="admin-section">
             <div class="flex justify-between items-center mb-4">
                 <h2>
                     <svg style="width: 1.5rem; height: 1.5rem; display: inline; margin-right: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                     </svg>
-                    Crear Nueva Entrada
+                    Administración de Posts - Crear Nueva Entrada
                 </h2>
             </div>
 
