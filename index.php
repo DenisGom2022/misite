@@ -112,7 +112,7 @@ $posts = $stmt->fetchAll();
                             <div class="blog-category">Health Blog</div>
                             <h3 class="blog-title">
                                 <a href="post.php?id=<?php echo $post['id']; ?>">
-                                    <?php echo htmlspecialchars($post['title']); ?>
+                                    <?php echo $post['title']; ?>
                                 </a>
                             </h3>
                             <div class="blog-excerpt">

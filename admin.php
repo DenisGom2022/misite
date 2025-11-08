@@ -498,7 +498,7 @@ $posts = $stmt->fetchAll();
                             <?php foreach ($posts as $post): ?>
                                 <tr>
                                     <td>
-                                        <strong><?php echo htmlspecialchars($post['title']); ?></strong>
+                                        <strong><?php echo $post['title']; ?></strong>
                                     </td>
                                     <td><?php echo date('d/m/Y H:i', strtotime($post['created_at'])); ?></td>
                                     <td>
