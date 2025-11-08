@@ -95,9 +95,19 @@ $posts = $stmt->fetchAll();
             <?php else: ?>
                 <?php foreach ($posts as $post): ?>
                     <article class="blog-card">
-                        <div class="blog-image">
-                            <img src="<?php echo !empty($post['image']) ? htmlspecialchars($post['image']) : 'https://source.unsplash.com/800x600/?blog,' . urlencode($post['title']); ?>" alt="<?php echo htmlspecialchars($post['title']); ?>">
-                        </div>
+                        <?php if (!empty($post['image'])): ?>
+                            <div class="blog-image">
+                                <img src="<?php echo htmlspecialchars($post['image']); ?>" alt="<?php echo htmlspecialchars($post['title']); ?>">
+                            </div>
+                        <?php else: ?>
+                            <div class="blog-image-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                                          d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                                </svg>
+                                <div class="placeholder-text"><?php echo strtoupper(substr(htmlspecialchars($post['title']), 0, 1)); ?></div>
+                            </div>
+                        <?php endif; ?>
                         <div class="blog-content">
                             <div class="blog-category">Health Blog</div>
                             <h3 class="blog-title">
